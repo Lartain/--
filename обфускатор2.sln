@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "обфускатор2", "обфускатор2\обфускатор2.vcxproj", "{22FDE52C-33C2-45DC-B29B-BB92C8BEA336}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22FDE52C-33C2-45DC-B29B-BB92C8BEA336}.Debug|x64.ActiveCfg = Debug|x64
+		{22FDE52C-33C2-45DC-B29B-BB92C8BEA336}.Debug|x64.Build.0 = Debug|x64
+		{22FDE52C-33C2-45DC-B29B-BB92C8BEA336}.Debug|x86.ActiveCfg = Debug|Win32
+		{22FDE52C-33C2-45DC-B29B-BB92C8BEA336}.Debug|x86.Build.0 = Debug|Win32
+		{22FDE52C-33C2-45DC-B29B-BB92C8BEA336}.Release|x64.ActiveCfg = Release|x64
+		{22FDE52C-33C2-45DC-B29B-BB92C8BEA336}.Release|x64.Build.0 = Release|x64
+		{22FDE52C-33C2-45DC-B29B-BB92C8BEA336}.Release|x86.ActiveCfg = Release|Win32
+		{22FDE52C-33C2-45DC-B29B-BB92C8BEA336}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A55452D-F403-48C7-823A-D62CE9AE279F}
+	EndGlobalSection
+EndGlobal
