@@ -4,6 +4,9 @@
 #include <time.h>
 #include <conio.h>
 #include <string.h>
+
+#pragma intrinsic(__rdtsc)
+
 char mass[250];
 int count = 1;
 char mass2[100];
@@ -396,6 +399,10 @@ void comment(char mass2[50], char mass[50]) {
 }*/
 
 void func(char mass2[50], char mass[50]) {
+	unsigned __int64 start_time, end_time;
+	unsigned __int64 __rdtsc();//для определения времени работы отдельных частей функции
+	unsigned __int64 sum1=0, sum2=0, sum3=0,sum4=0,sum5=0,sum6=0,sum7=0, sum8=0, sum9=0;//суммарная работа частей функции
+
 	int i, chislo, n = 1;
 	char sign;
 	FILE* file2 = fopen(mass2, "w");
@@ -407,6 +414,7 @@ void func(char mass2[50], char mass[50]) {
 			break;
 		}
 		else if (sign == '#') {
+			start_time = __rdtsc();
 			do {
 				fprintf(file2, "%c", sign);
 				sign = fgetc(file1);
@@ -441,11 +449,18 @@ void func(char mass2[50], char mass[50]) {
 		sign = fgetc(file1);
 		fprintf(file2, "%c", sign);
 		fprintf(file2, " ", sign);
+		
+		end_time = __rdtsc();//конец отчета основной функции 
+		sum1 += (end_time - start_time);//находим разницу и прибавляем
+
+
 		}
 		else
 		if (sign == 32) {}//пробелы
 		else 
 			if (sign == 'i') {
+				start_time = __rdtsc();//
+
 				fprintf(file2, "%c", sign);
 				sign = fgetc(file1);
 				if (sign == 'n') {
@@ -460,9 +475,14 @@ void func(char mass2[50], char mass[50]) {
 						fprintf(file2, " ", sign);
 					}else fprintf(file2, "%c", sign);
 				}else fprintf(file2, "%c", sign);
+				end_time = __rdtsc();//конец отчета основной функции 
+				sum2 += (end_time - start_time);//находим разницу и прибавляем
+
 			}
 			else
 				if (sign == 'c') {
+					start_time = __rdtsc();//
+
 					fprintf(file2, "%c", sign);
 					sign = fgetc(file1);
 					if (sign == 'h') {
@@ -481,9 +501,14 @@ void func(char mass2[50], char mass[50]) {
 						else fprintf(file2, "%c", sign);
 					}
 					else fprintf(file2, "%c", sign);
+
+					end_time = __rdtsc();//конец отчета основной функции 
+					sum3 += (end_time - start_time);//находим разницу и прибавляем
+
 				}
 				else
 					if (sign == 'v') {
+						start_time = __rdtsc();//
 						fprintf(file2, "%c", sign);
 						sign = fgetc(file1);
 						if (sign == 'o') {
@@ -505,9 +530,13 @@ void func(char mass2[50], char mass[50]) {
 							else fprintf(file2, "%c", sign);
 						}
 						else fprintf(file2, "%c", sign);
+						end_time = __rdtsc();//конец отчета основной функции 
+						sum4 += (end_time - start_time);//находим разницу и прибавляем
 					}
 					else
 						if (sign == 'r') {
+							start_time = __rdtsc();//
+
 							fprintf(file2, "%c", sign);
 							sign = fgetc(file1);
 							if (sign == 'e') {
@@ -544,8 +573,11 @@ void func(char mass2[50], char mass[50]) {
 								else fprintf(file2, "%c", sign);
 							}
 							else fprintf(file2, "%c", sign);
+							end_time = __rdtsc();//конец отчета основной функции 
+							sum5 += (end_time - start_time);//находим разницу и прибавляем
 						}
 						else if (sign == 'f'){
+							start_time = __rdtsc();//6
 							fprintf(file2, "%c", sign);
 							sign = fgetc(file1);
 							if (sign == 'l') {
@@ -569,10 +601,14 @@ void func(char mass2[50], char mass[50]) {
 								else fprintf(file2, "%c", sign);
 							}
 							else fprintf(file2, "%c", sign);
+							end_time = __rdtsc();//конец отчета основной функции 
+							sum6 += (end_time - start_time);//находим разницу и прибавляем
+							
 						}
 						else if (sign == '\t') {}
 						else if (sign == '\n') {}
 						else if (sign ==';'){
+							start_time = __rdtsc();//7
 							fprintf(file2, "%c", sign);
 							sign = fgetc(file1);
 							if (sign == '\n') {
@@ -582,6 +618,8 @@ void func(char mass2[50], char mass[50]) {
 									fprintf(file2, "%s", mass6);
 								}
 							}
+							end_time = __rdtsc();//конец отчета основной функции 
+							sum7 += (end_time - start_time);//находим разницу и прибавляем
 						}
 		else
 	    fprintf(file2, "%c", sign);
@@ -589,16 +627,30 @@ void func(char mass2[50], char mass[50]) {
 	/*switchforfunc2();*/
 	/*fprintf(file2, "\n");*///если тут поменять будет чуть-чуть понятнее
 	for (int i = 0; i < 3; i++) {
+		start_time = __rdtsc();//7
 		switchforfunc();
+		end_time = __rdtsc();//конец отчета основной функции 
+		sum8 += (end_time - start_time);//находим разницу и прибавляем
 		fprintf(file2, "%s", mass4);
 		fprintf(file2, " ");
+		start_time = __rdtsc();
 		randomword();
+		end_time = __rdtsc();//конец отчета основной функции 
+		sum9 += (end_time - start_time);//находим разницу и прибавляем
 		fprintf(file2, "%s", mass3);
 		fprintf(file2, "()");
 		fprintf(file2, "%s", mass5);
 		/*fprintf(file2, "\n");*///и тут вроде
 	}
-
+	printf("1: %I64d\n", sum1);// 1
+	printf("2: %I64d\n", sum2);// 2
+	printf("3: %I64d\n", sum3);// 3
+	printf("4: %I64d\n", sum4);// 4
+	printf("5: %I64d\n", sum5);// 5
+	printf("6: %I64d\n", sum6);// 6
+	printf("7: %I64d\n", sum7);// 7
+	printf("8: %I64d\n", sum8);// 7
+	printf("9: %I64d\n", sum9);// 7
 
 	fclose(file1);
 	fclose(file2);
@@ -611,12 +663,19 @@ int main(void) {
 	char text[200][100] = { '0' };
 	char sign, sign2, sign3 = { '1' }, sign4 = { '1' };
 
+	unsigned __int64 start_time, end_time, dif_time;
+	unsigned __int64 __rdtsc();//для опеределения времени работы функции 
+
 	/*printf("Fail name:\n");
 	scanf("%s", &mass);*/
 	strcpy(mass2, mass);
 	mass2[0] = '1';
-	printf("You can see new file!");
+	printf("You can see new file!\n");
+	start_time = __rdtsc();//начало отчета выполнения основной функции
 	func(mass2, mass);
+	end_time = __rdtsc();//конец отчета основной функции 
+	dif_time = end_time - start_time;//находим их разницу 
+	printf("MAIN FUNCTION: %I64d\n", dif_time);//печатаем значение времени
 	/*comment(mass2, mass);*/
 
 	return 0;
