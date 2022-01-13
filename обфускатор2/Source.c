@@ -18,7 +18,7 @@ char massfile[50] = { '0' };
 char massvoid[50] = { '0' };
 char mass6[250];
 
-char switchforfunc() {
+__inline char switchforfunc() {
 	int chislo;
 	chislo = rand() % 6;
 	switch (chislo)
@@ -68,7 +68,7 @@ char switchforfunc() {
 	}
 	return;
 }
-char switchforfunc2() {
+__inline char switchforfunc2() {
 	int chislo;
 	char aaa[250] = "int Intret=45871;char maaas[587];long long kill=15488521;";
 	char aaa2[250] = "long int lala=7854;float hfjnd=0.5;FILE* txttt;";
@@ -91,7 +91,7 @@ char switchforfunc2() {
 	return;
 }
 
-char switchforfunc3() {
+__inline char switchforfunc3() {
 	int chislo;
 	char aaa[250] = " int Intret=45871;char maaas[587];long long kill=15488521;";
 	char aaa2[250] = " long int lala=7854;float hfjnd=0.5;FILE* txttt;";
@@ -113,7 +113,7 @@ char switchforfunc3() {
 	}
 	return;
 }
-void randomword() {
+__inline void randomword() {
 	char mass[50];
 	int y, l;
 	char simbol;
@@ -129,7 +129,7 @@ void randomword() {
 	}
 	strcpy(mass3, mass);
 }
-void comment(char mass2[50], char mass[50]) {
+__inline void comment(char mass2[50], char mass[50]) {
 	int  i = 0, j = 0, l = 0, h, r = 0, k = 0, p, v = 0;
 	char text[200][100] = { '0' };
 	char sign, sign2, sign3 = { '1' }, sign4 = { '1' };
@@ -275,7 +275,7 @@ void comment(char mass2[50], char mass[50]) {
 }
 
 
-void func(char mass2[50], char mass[50]) {
+__inline void func(char mass2[50], char mass[50]) {
 	unsigned __int64 start_time, end_time;
 	unsigned __int64 __rdtsc();//для определения времени работы отдельных частей функции
 	unsigned __int64 sum1=0, sum2=0, sum3=0,sum4=0,sum5=0,sum6=0,sum7=0, sum8=0, sum9=0;//суммарная работа частей функции
