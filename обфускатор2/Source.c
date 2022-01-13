@@ -78,28 +78,6 @@ __inline char switchforfunc2() {
 	return;
 }
 
-__inline char switchforfunc3() {
-	int chislo;
-	char aaa[250] = " int Intret=45871;char maaas[587];long long kill=15488521;";
-	char aaa2[250] = " long int lala=7854;float hfjnd=0.5;FILE* txttt;";
-	char aaa3[250] = " char key;int finish=15874;char gef[58];";
-	chislo = rand() % 3;
-	switch (chislo)
-	{
-	case 1:
-		strcpy(mass4, aaa);
-		break;
-	case 2:
-		strcpy(mass4, aaa2);
-		break;
-	case 3:
-		strcpy(mass4, aaa3);
-		break;
-	default:
-		break;
-	}
-	return;
-}
 __inline void randomword() {
 	char mass[50];
 	int y, l;
@@ -284,7 +262,7 @@ __inline void func(char mass2[50], char mass[50]) {
 			if (sign == '\n') {
 				count++;
 				if ((count % 2) == 0) {
-					switchforfunc3();
+					switchforfunc2();
 					fprintf(file2, "%s", mass6);
 				}
 			}
