@@ -20,20 +20,28 @@ char mass6[250];
 
 __inline char switchforfunc() {
 	int chislo;
+	char l1[250] = "{for(int i=0;i<1000;i++){int p=0;p++;}return;}";
+	char l2[250] = "{int l=0;for(int i=0;i<584;i++){int p=i;l++;}return l;}";
+	char l3[250] = "{float ghbrjkltc=25;int a,h,p,c,d,s;a=rand()%25;if(ghbrjkltc==a){a++;p=15874;s=15472;}return s;}";
+	char l4[250] = "{int d=105;do{d--;}while(d!=0);return d; }";
 	chislo = rand() % 6;
 	switch (chislo)
 	{
 	case 1:
 		strcpy(mass4, iint);
+		strcpy(mass5, l1);
 		break;
 	case 2:
 		strcpy(mass4, cchar);
+		strcpy(mass5, l2);
 		break;
 	case 3:
 		strcpy(mass4, ffloat);
+		strcpy(mass5, l2);
 		break;
 	case 4:
 		strcpy(mass4, llong);
+		strcpy(mass5, l4);
 		break;
 	case 5:
 		strcpy(mass4, ddouble);
@@ -44,28 +52,7 @@ __inline char switchforfunc() {
 	default:
 		break;
 	}
-	chislo = rand() % 4;
-	char l1[250] = "{for(int i=0;i<1000;i++){int p=0;p++;}return;}";
-	char l2[250] = "{int l=0;for(int i=0;i<584;i++){int p=i;l++;}return l;}";
-	char l3[250] = "{float ghbrjkltc=25;int a,h,p,c,d,s;a=rand()%25;if(ghbrjkltc==a){a++;p=15874;s=15472;}return s;}";
-	char l4[250] = "{int d=105;do{d--;}while(d!=0);return d; }";
-	switch (chislo)
-	{
-	case 1:
-		strcpy(mass5, l1);
-		break;
-	case 2:
-		strcpy(mass5, l2);
-		break;
-	case 3:
-		strcpy(mass5, l3);
-		break;
-	case 4:
-		strcpy(mass5, l4);
-		break;
-	default:
-		break;
-	}
+	
 	return;
 }
 __inline char switchforfunc2() {
