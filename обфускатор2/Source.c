@@ -83,15 +83,13 @@ __inline void randomword() {
 	int y, l;
 	char simbol;
 	y = rand() % 45 + 5;
-
-	for (int i = 0; i <= y; i++) {
-		if (i == y) {
-			mass[i] = '\0';
-			break;
-		}
+	int i;
+	for (i = 0; i < y; i++) {
 		simbol = rand() % 26 + 97;
 		mass[i] = simbol;
 	}
+	mass[i] = '\0';
+
 	strcpy(mass3, mass);
 }
 __inline void comment(char mass2[50], char mass[50]) {
@@ -336,6 +334,7 @@ __inline void func(char mass2[50], char mass[50]) {
 							fprintf(file2, "%s", mass3);
 							fprintf(file2, "()");
 							fprintf(file2, "%s", mass5);
+							fprintf(file2, ";");
 							/*fprintf(file2, "\n");*/
 						}
 						n = 2;
