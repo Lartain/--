@@ -380,23 +380,25 @@ __inline void func(char mass2[50], char mass[50]) {
 
 				fprintf(file2, "%c", sign);
 				sign = fgetc(file1);
-				if (sign == 'n') {
+				if (sign == 'h') {
 					fprintf(file2, "%c", sign);
 					sign = fgetc(file1);
-					if (sign == 't') {
+					if (sign == 'a') {
 						fprintf(file2, "%c", sign);
 						sign = fgetc(file1);
-						if (sign == 'f') {
+						if (sign == 'r') {
 							fprintf(file2, "%c", sign);
+							fprintf(file2, " ", sign);
 						}
 						else
-							fprintf(file2, " ", sign);
+							fprintf(file2, "%c", sign);
 					}
 					else fprintf(file2, "%c", sign);
 				}
 				else fprintf(file2, "%c", sign);
-				end_time = __rdtsc();//конец отчета основной функции 
-				sum2 += (end_time - start_time);//находим разницу и прибавляем
+
+				end_time = __rdtsc();
+				sum3 += (end_time - start_time);
 				break;
 			case 'v':
 				start_time = __rdtsc();//
