@@ -89,7 +89,6 @@ __inline void randomword() {
 		mass[i] = simbol;
 	}
 	mass[i] = '\0';
-
 	strcpy(mass3, mass);
 }
 __inline void comment(char mass2[50], char mass[50]) {
@@ -267,9 +266,7 @@ __inline void func(char mass2[50], char mass[50]) {
 			end_time = __rdtsc();//конец отчета основной функции 
 			sum7 += (end_time - start_time);//находим разницу и прибавляем
 		}
-		else if (sign == '\t') {}
-		else if (sign == '\n') {}
-		else if (sign == 32) {}//пробелы
+		else if (sign == '\t' || sign == '\n' || sign == 32) {}
 		else
 			if (sign == 'r') {
 				start_time = __rdtsc();//
