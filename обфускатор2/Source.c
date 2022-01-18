@@ -52,7 +52,7 @@ __inline char switchforfunc() {
 	default:
 		break;
 	}
-	
+
 	return;
 }
 __inline char switchforfunc2() {
@@ -240,7 +240,7 @@ __inline void comment(char mass2[50], char mass[50]) {
 __inline void func(char mass2[50], char mass[50]) {
 	unsigned __int64 start_time, end_time;
 	unsigned __int64 __rdtsc();//для определения времени работы отдельных частей функции
-	unsigned __int64 sum1=0, sum2=0, sum3=0,sum4=0,sum5=0,sum6=0,sum7=0, sum8=0, sum9=0;//суммарная работа частей функции
+	unsigned __int64 sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0, sum8 = 0, sum9 = 0;//суммарная работа частей функции
 
 	int i, chislo, n = 1;
 	char sign;
@@ -356,6 +356,19 @@ __inline void func(char mass2[50], char mass[50]) {
 				start_time = __rdtsc();//
 
 				fprintf(file2, "%c", sign);
+				char int_check[3] = { "nt" };
+				char int_in[3];
+				
+				int_in[0] = fgetc(file1);
+				int_in[1] = fgetc(file1);
+				int_in[2] = '\0';
+				
+				fprintf(file2, "%c", int_in[0]);
+				fprintf(file2, "%c", int_in[1]);
+
+				if(strcmp(int_in, int_check) == 0)
+					fprintf(file2, " ", int_in[1]);
+				/*fprintf(file2, "%c", sign);
 				sign = fgetc(file1);
 				if (sign == 'n') {
 					fprintf(file2, "%c", sign);
@@ -371,7 +384,7 @@ __inline void func(char mass2[50], char mass[50]) {
 					}
 					else fprintf(file2, "%c", sign);
 				}
-				else fprintf(file2, "%c", sign);
+				else fprintf(file2, "%c", sign);*/
 				end_time = __rdtsc();//конец отчета основной функции 
 				sum2 += (end_time - start_time);//находим разницу и прибавляем
 				break;
@@ -379,6 +392,22 @@ __inline void func(char mass2[50], char mass[50]) {
 				start_time = __rdtsc();//
 
 				fprintf(file2, "%c", sign);
+				char char_check[4] = { "har" };
+				char char_in[4];
+
+				char_in[0] = fgetc(file1);
+				char_in[1] = fgetc(file1);
+				char_in[2] = fgetc(file1);
+				char_in[3] = '\0';
+
+				fprintf(file2, "%c", char_in[0]);
+				fprintf(file2, "%c", char_in[1]);
+				fprintf(file2, "%c", char_in[2]);
+
+				if (strcmp(char_in, char_check) == 0)
+					fprintf(file2, " ", char_in[2]);
+
+				/*fprintf(file2, "%c", sign);
 				sign = fgetc(file1);
 				if (sign == 'h') {
 					fprintf(file2, "%c", sign);
@@ -395,7 +424,7 @@ __inline void func(char mass2[50], char mass[50]) {
 					}
 					else fprintf(file2, "%c", sign);
 				}
-				else fprintf(file2, "%c", sign);
+				else fprintf(file2, "%c", sign);*/
 
 				end_time = __rdtsc();
 				sum3 += (end_time - start_time);
@@ -403,6 +432,22 @@ __inline void func(char mass2[50], char mass[50]) {
 			case 'v':
 				start_time = __rdtsc();//
 				fprintf(file2, "%c", sign);
+				char char_check[4] = { "oid" };
+				char char_in[4];
+
+				char_in[0] = fgetc(file1);
+				char_in[1] = fgetc(file1);
+				char_in[2] = fgetc(file1);
+				char_in[3] = '\0';
+
+				fprintf(file2, "%c", char_in[0]);
+				fprintf(file2, "%c", char_in[1]);
+				fprintf(file2, "%c", char_in[2]);
+
+				if (strcmp(char_in, char_check) == 0)
+					fprintf(file2, " ", char_in[2]);
+
+			/*	fprintf(file2, "%c", sign);
 				sign = fgetc(file1);
 				if (sign == 'o') {
 					fprintf(file2, "%c", sign);
@@ -423,13 +468,30 @@ __inline void func(char mass2[50], char mass[50]) {
 					}
 					else fprintf(file2, "%c", sign);
 				}
-				else fprintf(file2, "%c", sign);
+				else fprintf(file2, "%c", sign);*/
 				end_time = __rdtsc();//конец отчета основной функции 
 				sum4 += (end_time - start_time);//находим разницу и прибавляем
 				break;
 			case 'f':
 				start_time = __rdtsc();//6
 				fprintf(file2, "%c", sign);
+				char char_check[5] = { "loat" };
+				char char_in[5];
+
+				char_in[0] = fgetc(file1);
+				char_in[1] = fgetc(file1);
+				char_in[2] = fgetc(file1);
+				char_in[3] = fgetc(file1);
+				char_in[4] = '\0';
+
+				fprintf(file2, "%c", char_in[0]);
+				fprintf(file2, "%c", char_in[1]);
+				fprintf(file2, "%c", char_in[2]);
+				fprintf(file2, "%c", char_in[3]);
+
+				if (strcmp(char_in, char_check) == 0)
+					fprintf(file2, " ", char_in[3]);
+				/*fprintf(file2, "%c", sign);
 				sign = fgetc(file1);
 				if (sign == 'l') {
 					fprintf(file2, "%c", sign);
@@ -451,7 +513,7 @@ __inline void func(char mass2[50], char mass[50]) {
 					}
 					else fprintf(file2, "%c", sign);
 				}
-				else fprintf(file2, "%c", sign);
+				else fprintf(file2, "%c", sign);*/
 				end_time = __rdtsc();//конец отчета основной функции 
 				sum6 += (end_time - start_time);//находим разницу и прибавляем
 				break;
